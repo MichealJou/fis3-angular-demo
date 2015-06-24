@@ -1,6 +1,6 @@
 
-//通过识别bower.json文件动态添加bower_component目录内需要编译的资源
-require('./build/bower_boost.js');
+//由于使用了bower，有很多非必须资源。通过set project.files对象指定需要编译的文件夹和引用的资源
+fis.set('project.files', ['page/**','map.json','modules/**','lib']);
 
 fis.set('statics','/statics');//static目录
 
@@ -83,29 +83,16 @@ fis.media('prod')
     })
     .match('**.css', {
         optimizer: fis.plugin('clean-css')
+    })
+    .match("lib/mod.js",{
+        packTo : "/pkg/vendor.js"
+    })
+    //所有页面中引用到的bower js资源
+    .match("bower_components/**/*.js",{
+        packTo : "/pkg/vendor.js"
+    })
+    //所有页面中引用到的bower css资源
+    .match("bower_components/**/*.css",{
+        packTo : "/pkg/vendor.css"
     });
 
-//打包配置，由于文件分散，避免多次写fis.match
-var packConf = {
-    '/pkg/vendor.js': [
-        '/lib/mod.js',
-        '/bower_components/angular/angular.js',
-        '/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-        '/bower_components/angular-cookies/angular-cookies.js',
-        '/bower_components/ui-router/release/angular-ui-router.js'
-    ],
-    '/pkg/vendor.css': [
-        '/bower_components/bootstrap/dist/css/bootstrap.css',
-        '/bower_components/font-awesome/css/font-awesome.css',
-        '/bower_components/rdash-ui/dist/css/rdash.css'
-    ]
-};
-
-fis.util.map(packConf,function(pkg,conf){
-    fis.util.map(conf,function(index,file){
-        fis.media('prod')
-            .match(file,{
-                packTo: pkg
-            })
-    })    
-})

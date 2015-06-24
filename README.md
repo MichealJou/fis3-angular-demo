@@ -1,7 +1,7 @@
 fis3-angular-demo
 ===========================
 
-基于https://github.com/hefangshi/fis-pure-angular-demo移植到FIS3，使用了 https://github.com/fex-team/mod 进行模块化管理与依赖加载，同时通过ng-annotate实现依赖注入注解的自动添加
+基于 https://github.com/hefangshi/fis-pure-angular-demo 移植到FIS3，使用了 https://github.com/fex-team/mod 进行模块化管理与依赖加载，同时通过ng-annotate实现依赖注入注解的自动添加
 
 ## 使用方法
 

@@ -31,6 +31,10 @@ fis3 release prod
 
 ```
 
+**运行截图**
+
+![列表页](./doc/pic.png)
+
 ## Why
 
 1. 用gulp做的angular方案很少集成按需加载，一般是采用目录全量加载方式去加载资源，这个DEMO中，所有的controller, directives则是按需加载。

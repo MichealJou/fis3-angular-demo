@@ -1,39 +1,34 @@
-pure-angular-demo
+fis3-angular-demo
 ===========================
 
-基于 https://github.com/rdash/rdash-angular 移植，使用了 https://github.com/fex-team/mod 进行模块化管理与依赖加载，同时通过ng-annotate实现依赖注入注解的自动添加
+基于https://github.com/hefangshi/fis-pure-angular-demo移植到FIS3，使用了 https://github.com/fex-team/mod 进行模块化管理与依赖加载，同时通过ng-annotate实现依赖注入注解的自动添加
 
-## Usage
+## 使用方法
 
 ```
 # 安装fis-pure
-npm i -g fis-pure
-
-# 安装ng-annotate插件
-npm install -g fis-preprocessor-annotate
+npm i -g fis3
 
 # 下载demo
-git clone https://github.com/hefangshi/pure-angular-demo
+git clone https://github.com/zhangtao07/fis3-angular-demo.git
 
-cd pure-angular-demo
+cd fis3-angular-demo
+
+# 安装相关插件
+npm install 
 
 # bower安装依赖
 bower install
 
 # 使用FIS编译DEMO
-pure release
+fis3 release 
 
 # 预览效果
-pure server start
+fis3 release  start --type node
 
-# 打包
-pure release -p
+# 生产环境打包压缩MD5戳等
+fis3 release prod
 
-# 打包、压缩
-pure release -op
-
-# 打包、压缩、MD5戳
-pure release -omp
 ```
 
 ## Why

@@ -1,12 +1,13 @@
-var bowerPath = fis.config.get('bower.path') || 'bower_components';
+var bowerPath = fis.get('bower.path') || 'bower_components/**';
 
-fis.config.set('project.exclude', bowerPath);
+fis.get('project.ignore').push(bowerPath);
+
 var fs = require('fs');
 var path = require('path');
 var originGetSource = fis.project.getSource;
 
 function loadAllBowerFile(componentPath, source) {
-    var exclude = fis.config.get('project.exclude');
+    var exclude = fis.get('project.ignore');
     var root = fis.project.getProjectPath();
     fis.util.find(bowerPath + path.sep + componentPath, null, exclude, root).forEach(function (file) {
         file = fis.file(file);

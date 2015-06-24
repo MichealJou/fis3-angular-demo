@@ -6,15 +6,14 @@ fis3-angular-demo
 ## 使用方法
 
 ```
-# 安装fis-pure
-npm i -g fis3
+# 安装fis3
+npm install -g fis3
 
 # 下载demo
 git clone https://github.com/zhangtao07/fis3-angular-demo.git
 
-cd fis3-angular-demo
-
 # 安装相关插件
+cd fis3-angular-demo
 npm install 
 
 # bower安装依赖
@@ -24,7 +23,7 @@ bower install
 fis3 release 
 
 # 预览效果
-fis3 release  start --type node
+fis3 server  start --type node
 
 # 生产环境打包压缩MD5戳等
 fis3 release prod
@@ -42,4 +41,4 @@ fis3 release prod
 3. 如果看看配置文件就会发现，在FIS的环境下开发angular应用基本不需要任何配置，也是给大家展现一些FIS的使用思路
 4. 这个方案的目录组织结构也是按照模块进行功能拆分，给出了一个在angular应用下，模块拆分的指引
 5. 无缝结合FIS的打包、压缩、MD5戳等功能
-6. 最后FIS3能轻松解决使用`bower`时很多`零散资源`的问题
+6. 通过按需编译FIS3能轻松解决使用`bower`时很多`冗余资源`的问题

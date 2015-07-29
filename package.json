@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "fis3-hook-module": "*",
-    "fis3-postpackager-loader": "1.0.16",
+    "fis3-postpackager-loader": "*",
     "fis-parser-less": "*",
     "fis-preprocessor-annotate": "*"
   },

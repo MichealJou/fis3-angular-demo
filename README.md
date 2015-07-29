@@ -22,7 +22,7 @@ bower install
 # 使用FIS编译DEMO
 fis3 release 
 
-# 预览效果
+# 预览效果,推荐安装php-cgi和java，这样支持调试php程序，也可以直接fis3 server start 启动服务器
 fis3 server  start --type node
 
 # 生产环境打包压缩MD5戳等

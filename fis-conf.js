@@ -77,7 +77,8 @@ fis.match('::packager', {
 /**********************生产环境下CSS、JS压缩合并*****************/
 //使用方法 fis3 release prod
 fis.media('prod')
-    .match('**.js', {
+    //注意压缩时.async.js文件是异步加载的，不能直接用annotate解析
+    .match('**!(.async).js', {
         preprocessor : fis.plugin('annotate'),
         optimizer: fis.plugin('uglify-js')
     })

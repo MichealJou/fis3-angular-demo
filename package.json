@@ -1,6 +1,6 @@
 {
   "name": "fis3-angular-demo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "build angular app with fis3",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "fis3-hook-module": "*",
-    "fis3-postpackager-loader": "*",
+    "fis3-postpackager-loader": "1.0.16",
     "fis-parser-less": "*",
     "fis-preprocessor-annotate": "*"
   },

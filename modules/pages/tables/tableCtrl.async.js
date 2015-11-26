@@ -1,5 +1,9 @@
 
-return ['$scope', function($scope) {
+var scope = ['$scope', function($scope) {
     $scope.test = '异步加载测试';
-    $scope.$apply();
+    if(!$scope.$$phase) {
+        $scope.$apply();
+    }
 }];
+
+return scope;
